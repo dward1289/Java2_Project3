@@ -12,7 +12,21 @@ import java.io.ObjectOutputStream;
 import android.content.Context;
 import android.util.Log;
 
-public class FileSystem {
+//THIS SINGLETON CLASS SAVES AND READ FILES FROM THE EXTERNAL
+public class SingletonClass {
+
+	private static SingletonClass instance = null;
+	protected SingletonClass(){
+		
+	}
+	
+	public static SingletonClass getInstance(){
+		if(instance == null){
+			instance = new SingletonClass();
+		}
+		return instance;
+	}
+	
 	@SuppressWarnings("resource")
 	public static Boolean storeStringFile(Context context, String filename, String content, Boolean external){
 		try{

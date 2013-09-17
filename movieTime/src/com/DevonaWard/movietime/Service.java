@@ -67,8 +67,8 @@ public class Service extends IntentService{
 						  Log.i("JSON IS HERE", "The json is valid");
 						  
 						  //Save json data
-						  FileSystem.storeObjectFile(context, "teamsJSON", json.toString(), false);
-						  FileSystem.storeStringFile(context, "teamsJSONString", json.toString(), false);
+						  SingletonClass.storeObjectFile(context, "teamsJSON", json.toString(), false);
+						  SingletonClass.storeStringFile(context, "teamsJSONString", json.toString(), false);
 					  }catch (JSONException e){
 						  Log.e("JSON storeJSON", e.getMessage().toString());
 					  }
