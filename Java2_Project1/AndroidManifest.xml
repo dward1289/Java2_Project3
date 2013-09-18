@@ -26,6 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.DevonaWard.java2_project1.SecondActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.ACTION_VIEW"/>
+            </intent-filter>
+            </activity>
         <service android:name="theService"></service>
         <provider android:name="contentProvider" android:exported="true" android:authorities='com.DevonaWard.Java2_Project1.contentProvider'></provider>
     </application>

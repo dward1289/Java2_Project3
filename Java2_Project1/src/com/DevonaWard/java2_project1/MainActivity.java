@@ -21,6 +21,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	Context context = this;
 	JSONArray theSavedObject;
+	String fullName;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,13 @@ public class MainActivity extends Activity {
 		showData();
 		
 	}
+	//New Activity called from onClick
+	public void startActivity(View view){
+		//Explicit Intent created
+		Intent intent2 = new Intent(this,SecondActivity.class);
+		intent2.putExtra("teamName", fullName);
+		this.startActivity(intent2);
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -72,7 +80,7 @@ public class MainActivity extends Activity {
 				theSavedObject = new JSONArray (savedData);
 				JSONObject mainObj = theSavedObject.getJSONObject(spinnerPosition);
 				//Data put in to strings
-				String fullName = mainObj.getString("full_name");
+				fullName = mainObj.getString("full_name");
 				String abbreviation = mainObj.getString("abbreviation");
 				String areaName = mainObj.getString("site_name");
 				String division = mainObj.getString("division");

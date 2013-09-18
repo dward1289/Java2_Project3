@@ -11,6 +11,7 @@
     <string name="theDiv">Division:</string>
     <string name="placeHolder">[][][][][][][]</string>
     <string name="go">Go</string>
+    <string name="more">More Info</string>
     <string-array name="city_array">
         <item>Atlanta Hawks</item>
         <item>Boston Celtics</item>
