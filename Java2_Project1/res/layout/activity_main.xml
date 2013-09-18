@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent" 
+              android:layout_height="fill_parent" 
+              android:orientation="vertical" >
+
+    <Spinner
+    	android:id="@+id/team_spinner"
+   		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:entries="@array/city_array"/>
+
+    <Button
+        android:id="@+id/goBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go" 
+        android:onClick="startService"/>
+    
+    <TextView  
+    	android:text=""
+    	android:layout_width="wrap_content"  
+    	android:layout_height="wrap_content" />
+    
+    <TableLayout 
+    	android:id="@+id/statsLayout"  
+    	android:layout_width="match_parent"  
+    	android:layout_height="match_parent"  
+    	android:shrinkColumns="*"  
+    	android:stretchColumns="*">  
+           
+    <TableRow  
+        android:layout_height="wrap_content"  
+        android:id="@+id/teamRow"  
+        android:layout_width="match_parent">  
+        <TextView  
+            android:text="@string/teamName"/>  
+        <TextView 
+            android:id="@+id/teamTxt"            
+            android:text="@string/placeHolder"  
+            android:gravity="center_vertical"/>
+    </TableRow>
+        
+    <TableRow  
+        android:layout_height="wrap_content"  
+        android:id="@+id/abRow"  
+        android:layout_width="match_parent"> 
+        <TextView  
+            android:text="@string/theAb"/>  
+        <TextView  
+            android:id="@+id/abTxt"
+            android:text="@string/placeHolder"  
+            android:gravity="center_vertical"/>
+    </TableRow>  
+        
+    <TableRow  
+        android:layout_height="wrap_content"  
+        android:id="@+id/arenaRow"  
+        android:layout_width="match_parent"> 
+        <TextView  
+            android:text="@string/theArena"/>  
+        <TextView
+            android:id="@+id/arenaTxt"  
+            android:text="@string/placeHolder"   
+            android:gravity="center_vertical"/>
+    </TableRow> 
+        
+    <TableRow  
+        android:layout_height="wrap_content"  
+        android:id="@+id/divRow"  
+        android:layout_width="match_parent"> 
+        <TextView  
+            android:text="@string/theDiv"/>  
+        <TextView  
+            android:id="@+id/divTxt"
+            android:text="@string/placeHolder"   
+            android:gravity="center_vertical"/>
+     </TableRow> 
+        
+	 </TableLayout>
+
+</LinearLayout>
