@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,11 +24,17 @@ public class MainActivity extends Activity {
 	Context context = this;
 	JSONArray theSavedObject;
 	String fullName;
+	String teamID;
+	Button moreInfo;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		moreInfo = (Button) findViewById(R.id.moreBtn);
+		moreInfo.setEnabled(false);
 	}
 
 	//On click for the "Go" button
@@ -53,8 +61,13 @@ public class MainActivity extends Activity {
 	public void startActivity(View view){
 		//Explicit Intent created
 		Intent intent2 = new Intent(this,SecondActivity.class);
-		intent2.putExtra("teamName", fullName);
+		intent2.putExtra("teamName", teamID);
 		this.startActivity(intent2);
+	}
+	//Start About Intent (Implicit Intent)
+	public void startAbout(View view){
+		Intent aboutIntent = new Intent (Intent.ACTION_VIEW,Uri.parse("https://github.com/dward1289?tab=repositories"));
+		startActivity(aboutIntent);
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,15 +93,19 @@ public class MainActivity extends Activity {
 				theSavedObject = new JSONArray (savedData);
 				JSONObject mainObj = theSavedObject.getJSONObject(spinnerPosition);
 				//Data put in to strings
+				teamID = mainObj.getString("team_id");
 				fullName = mainObj.getString("full_name");
 				String abbreviation = mainObj.getString("abbreviation");
 				String areaName = mainObj.getString("site_name");
 				String division = mainObj.getString("division");
-				//Datta displayed in the text views.
+				//Data displayed in the text views.
 				teamN.setText(fullName);
 				teamAb.setText(abbreviation);
 				teamAr.setText(areaName);
 				teamDiv.setText(division);
+				
+				//Enable more info button
+				moreInfo.setEnabled(true);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

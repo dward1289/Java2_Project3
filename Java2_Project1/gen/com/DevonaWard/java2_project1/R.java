@@ -29,7 +29,8 @@ public final class R {
     public static final class id {
         public static final int abRow=0x7f090005;
         public static final int abTxt=0x7f090006;
-        public static final int action_settings=0x7f09000c;
+        public static final int aboutBtn=0x7f09000c;
+        public static final int action_settings=0x7f09000e;
         public static final int arenaRow=0x7f090007;
         public static final int arenaTxt=0x7f090008;
         public static final int divRow=0x7f090009;
@@ -40,6 +41,7 @@ public final class R {
         public static final int teamRow=0x7f090003;
         public static final int teamTxt=0x7f090004;
         public static final int team_spinner=0x7f090000;
+        public static final int webview=0x7f09000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -49,12 +51,13 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
+        public static final int about=0x7f050008;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int go=0x7f050009;
+        public static final int go=0x7f05000a;
         public static final int hello_world=0x7f050002;
-        public static final int more=0x7f05000a;
-        public static final int placeHolder=0x7f050008;
+        public static final int more=0x7f05000b;
+        public static final int placeHolder=0x7f050009;
         public static final int teamName=0x7f050004;
         public static final int theAb=0x7f050005;
         public static final int theArena=0x7f050006;
